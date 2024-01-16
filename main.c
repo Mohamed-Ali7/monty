@@ -18,7 +18,7 @@ int line_number;
  */
 int main(int argc, char *argv[])
 {
-	char line[120];
+	char line[1024];
 	int i;
 	instruction_t inst[] = {
 		{"push", push}, {"pall", pall}, {NULL, NULL}
@@ -30,7 +30,7 @@ int main(int argc, char *argv[])
 	file = fopen(argv[1], "r");
 	if (file == NULL)
 		fprintf(stderr, "Error: Can't open file %s\n", argv[1]), exit(EXIT_FAILURE);
-	while (fgets(line, 120, file))
+	while (fgets(line, 1024, file))
 	{
 		line_number++;
 		args = tokenize(line);
