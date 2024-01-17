@@ -9,6 +9,7 @@
 void push(stack_t **stack, unsigned int line_number)
 {
 	stack_t *top;
+	stack_t *temp;
 
 	(void) (line_number);
 	if (args[1] == NULL || !is_digit(args[1]))
@@ -31,8 +32,10 @@ void push(stack_t **stack, unsigned int line_number)
 		*stack = top;
 		return;
 	}
+	temp = *stack;
 	top->next = *stack;
 	*stack = top;
+	temp->prev = *stack;
 }
 
 /**
@@ -72,4 +75,3 @@ void free_stack(stack_t *stack)
 		free(tmp);
 	}
 }
-
