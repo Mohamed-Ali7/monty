@@ -35,8 +35,12 @@ int main(int argc, char *argv[])
 	{
 		line_number++;
 		args = tokenize(line);
-		if (args == NULL)
+		if (args == NULL || strcmp(args[0], "nop") == 0)
+		{
+			if (args)
+				free(args);
 			continue;
+		}
 		for (i = 0; inst[i].opcode != NULL; i++)
 		{
 			if (strcmp(args[0], inst[i].opcode) == 0)
