@@ -33,9 +33,20 @@ void push(stack_t **stack, unsigned int line_number)
 		return;
 	}
 	temp = *stack;
-	top->next = *stack;
-	*stack = top;
-	temp->prev = *stack;
+	if (is_queue)
+	{
+		while (temp->next != NULL)
+			temp = temp->next;
+		temp->next = top;
+		top->prev = temp;
+		top->next = NULL;
+	}
+	else
+	{
+		top->next = *stack;
+		*stack = top;
+		temp->prev = *stack;
+	}
 }
 
 /**

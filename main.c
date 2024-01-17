@@ -9,6 +9,7 @@ FILE *file;
 char **args;
 stack_t *stack;
 int line_number;
+int is_queue;
 
 /**
  * main - Entry point
@@ -22,9 +23,8 @@ int main(int argc, char *argv[])
 	int i;
 	instruction_t inst[] = {
 		{"push", push}, {"pall", pall}, {"pint", pint}, {"pop", pop}, {"swap", swap},
-		{"add", add}, {"sub", sub}, {"div", _div}, {"mul", mul}, {"mod", mod},
-		{"pchar", pchar}, {"pstr", pstr}, {"rotl", rotl}, {"rotr", rotr},
-		{NULL, NULL}
+		{"add", add}, {"sub", sub}, {"div", _div}, {"mul", mul}, {"pchar", pchar},
+		{"mod", mod}, {"pstr", pstr}, {"rotl", rotl}, {"rotr", rotr}, {NULL, NULL}
 	};
 
 	if (argc != 2)
@@ -41,6 +41,18 @@ int main(int argc, char *argv[])
 		{
 			if (args)
 				free(args);
+			continue;
+		}
+		if (strcmp(args[0], "queue") == 0)
+		{
+			is_queue = 1;
+			free(args);
+			continue;
+		}
+		if (strcmp(args[0], "stack") == 0)
+		{
+			is_queue = 0;
+			free(args);
 			continue;
 		}
 		for (i = 0; inst[i].opcode != NULL; i++)
