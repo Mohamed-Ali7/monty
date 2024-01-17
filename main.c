@@ -21,7 +21,8 @@ int main(int argc, char *argv[])
 	char line[120];
 	int i;
 	instruction_t inst[] = {
-		{"push", push}, {"pall", pall}, {"pint", pint}, {"pop", pop}, {NULL, NULL}
+		{"push", push}, {"pall", pall}, {"pint", pint}, {"pop", pop}, {"swap", swap},
+		{NULL, NULL}
 	};
 
 	if (argc != 2)
