@@ -23,7 +23,7 @@ int main(int argc, char *argv[])
 	instruction_t inst[] = {
 		{"push", push}, {"pall", pall}, {"pint", pint}, {"pop", pop}, {"swap", swap},
 		{"add", add}, {"sub", sub}, {"div", _div}, {"mul", mul}, {"mod", mod},
-		{"pchar", pchar}, {NULL, NULL}
+		{"pchar", pchar}, {"pstr", pstr}, {NULL, NULL}
 	};
 
 	if (argc != 2)
