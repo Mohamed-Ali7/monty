@@ -60,6 +60,25 @@ void pall(stack_t **stack, unsigned int line_number)
 }
 
 /**
+ * pint - Prints the value at the top of the stack
+ * @stack: Is a pointer to the pointer to the stack
+ * @line_number: Is the current line number of the opcode
+ * Return: void
+*/
+
+void pint(stack_t **stack, unsigned int line_number)
+{
+	(void) (line_number);
+	if (*stack == NULL)
+	{
+		fprintf(stderr, "L%d: can't pint, stack empty\n", line_number);
+		free(args), fclose(file);
+		exit(EXIT_FAILURE);
+	}
+	printf("%d\n", (*stack)->n);
+}
+
+/**
  * free_stack - frees a stack
  * @stack: Is the stack to free
  * Return: void
