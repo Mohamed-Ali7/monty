@@ -92,6 +92,8 @@ int is_digit(char *str)
 
 	for (i = 0; str[i]; i++)
 	{
+		if (i == 0 && str[i] == '-' && str[i + 1])
+			continue;
 		if (str[i] >= '0' && str[i] <= '9')
 			continue;
 		return (0);
