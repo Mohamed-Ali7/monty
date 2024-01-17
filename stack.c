@@ -79,6 +79,30 @@ void pint(stack_t **stack, unsigned int line_number)
 }
 
 /**
+ * pop - Removes the top element of the stack.
+ * @stack: Is a pointer to the pointer to the stack
+ * @line_number: Is the current line number of the opcode
+ * Return: void
+*/
+
+void pop(stack_t **stack, unsigned int line_number)
+{
+	stack_t *temp = *stack;
+
+	(void) (line_number);
+	if (*stack == NULL)
+	{
+		fprintf(stderr, "L%d: can't pop an empty stack\n", line_number);
+		free(args), fclose(file);
+		exit(EXIT_FAILURE);
+	}
+	*stack = (*stack)->next;
+	free(temp);
+	if (*stack)
+		(*stack)->prev = NULL;
+}
+
+/**
  * free_stack - frees a stack
  * @stack: Is the stack to free
  * Return: void
