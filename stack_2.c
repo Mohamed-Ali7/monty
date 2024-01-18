@@ -11,8 +11,6 @@ void swap(stack_t **stack, unsigned int line_number)
 	stack_t *temp = *stack;
 	int size = 0;
 
-	(void) (line_number);
-
 	while (temp != NULL)
 	{
 		temp = temp->next;
@@ -44,8 +42,6 @@ void add(stack_t **stack, unsigned int line_number)
 {
 	stack_t *temp = *stack;
 	int size = 0;
-
-	(void) (line_number);
 
 	while (temp != NULL)
 	{
@@ -81,8 +77,6 @@ void sub(stack_t **stack, unsigned int line_number)
 	stack_t *temp = *stack;
 	int size = 0;
 
-	(void) (line_number);
-
 	while (temp != NULL)
 	{
 		temp = temp->next;
@@ -114,8 +108,6 @@ void _div(stack_t **stack, unsigned int line_number)
 {
 	stack_t *temp = *stack;
 	int size = 0;
-
-	(void) (line_number);
 
 	while (temp != NULL)
 	{
@@ -154,8 +146,6 @@ void mul(stack_t **stack, unsigned int line_number)
 {
 	stack_t *temp = *stack;
 	int size = 0;
-
-	(void) (line_number);
 
 	while (temp != NULL)
 	{

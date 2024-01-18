@@ -116,7 +116,6 @@ void rotl(stack_t **stack, unsigned int line_number)
 		temp = temp->next;
 
 	first = (*stack)->next;
-	first->next = (*stack)->next->next;
 	first->prev = NULL;
 
 	temp->next = *stack;

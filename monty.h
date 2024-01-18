@@ -6,7 +6,6 @@
 #include <string.h>
 
 extern FILE *file;
-extern int value;
 extern char **args;
 extern struct stack_s *stack;
 extern int line_number;
