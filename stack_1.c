@@ -24,10 +24,11 @@ void push(stack_t **stack, unsigned int line_number)
 		fclose(file), free(args), free_stack(*stack), exit(EXIT_FAILURE);
 	}
 	top->n = atoi(args[1]);
-	top->prev = NULL;
+
 	if (*stack == NULL)
 	{
 		top->next = NULL;
+		top->prev = NULL;
 		*stack = top;
 		return;
 	}
@@ -43,6 +44,7 @@ void push(stack_t **stack, unsigned int line_number)
 	else
 	{
 		top->next = *stack;
+		top->prev = NULL;
 		*stack = top;
 		temp->prev = *stack;
 	}
